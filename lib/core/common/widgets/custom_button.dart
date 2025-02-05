@@ -8,7 +8,6 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     required this.onPressed,
     required this.text,
-
     super.key,
     this.lastRadius,
     this.threeRadius,
@@ -16,7 +15,7 @@ class CustomButton extends StatelessWidget {
     this.textColor,
     this.isLoading = false,
     this.loadingWidth = 30,
-    this.loadingHeight = 30,
+    this.loadingHeight = 30, this.padding,
   });
   final VoidCallback onPressed;
   final String text;
@@ -28,21 +27,23 @@ class CustomButton extends StatelessWidget {
   final bool isLoading;
   final double? loadingWidth;
   final double? loadingHeight;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        minimumSize: Size.fromHeight(50.h),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        backgroundColor:
-            backgroundColor ?? context.color.mainColor, //Todo:it was blac,,
+        // minimumSize: Size.fromHeight(50.h),
+        
+        padding:
+            padding ?? const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        backgroundColor: backgroundColor ?? context.color.mainColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(threeRadius ?? 20),
             topRight: Radius.circular(threeRadius ?? 20),
             bottomRight: Radius.circular(threeRadius ?? 20),
-            bottomLeft: Radius.circular(lastRadius ?? 0),
+            bottomLeft: Radius.circular(lastRadius ?? 20),
           ),
         ),
       ),
@@ -54,7 +55,6 @@ class CustomButton extends StatelessWidget {
           fontSize: 16.sp,
         ),
         text: text,
-        textAlign: TextAlign.center,
       ),
     );
   }

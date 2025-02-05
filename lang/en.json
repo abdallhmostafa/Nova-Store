@@ -50,5 +50,19 @@
     "orders": "Orders",
     "dashBoard": "DashBoard",
     "do_you_want_to_log_out": "Do you want to log out?",
-    "refresh": "Refresh"
+    "refresh": "Refresh",
+    "get_all_categories": "Get all categories",
+    "add": "Add",
+    "create_category": "Create Category",
+    "add_image":"Add Image",
+    "remove_image":"Remove Image",
+    "create_new_category":"Create a New Category",
+    "enter_the_category_name":"Enter the category name",
+    "remove":"Remove",
+    "name_must_be_at_least_3_characters":"Name must be at least 3 characters",
+    "category_name":"Category Name",
+    "please_enter_the_name_of_the_category":"Please enter the name of the category",
+    "category_added_successfully":"Category added successfully",
+    "category_removed_successfully":"Category removed successfully",
+    "category_updated_successfully":"Category updated successfully"
 }

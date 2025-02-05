@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nova_store/core/common/widgets/admin/admin_app_bar.dart';
 import 'package:nova_store/core/extensions/context_extention.dart';
 import 'package:nova_store/core/lang/lang_keys.dart';
+import 'package:nova_store/features/admin/add_categories/presentation/refactors/add_categore_page_body.dart';
 
 class AddCategorePage extends StatelessWidget {
   const AddCategorePage({super.key});
@@ -12,7 +13,7 @@ class AddCategorePage extends StatelessWidget {
       appBar: AdminAppBar(
         title: context.translate(LangKeys.categories),
       ),
-      body: const Placeholder(),
+      body: const AddCategorePageBody(),
     );
   }
 }

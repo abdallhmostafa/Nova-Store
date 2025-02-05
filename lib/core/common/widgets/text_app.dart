@@ -6,7 +6,7 @@ class TextApp extends StatelessWidget {
     required this.theme,
     this.maxLines,
     this.softWrap,
-    this.textOverflow,
+    this.textOverflow = TextOverflow.ellipsis,
     this.textAlign = TextAlign.center,
     super.key,
   });

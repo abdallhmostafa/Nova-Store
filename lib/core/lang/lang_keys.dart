@@ -1,4 +1,20 @@
 abstract class LangKeys {
+  static const String createNewCategory = 'create_new_category';
+  static const String categoryName = 'category_name';
+  static const String enterTheCategoryName = 'enter_the_category_name';
+  static const String pleaseEnterTheNameOfTheCategory =
+      'please_enter_the_name_of_the_category';
+  static const String nameMustBeAtLeast3Characters =
+      'name_must_be_at_least_3_characters';
+  static const String categoryAddedSuccessfully = 'category_added_successfully';
+  static const String categoryRemovedSuccessfully =
+      'category_removed_successfully';
+  static const String categoryUpdatedSuccessfully =
+      'category_updated_successfully';
+  static const String remove = 'remove';
+  static const String createCategory = 'create_category';
+  static const String add = 'add';
+  static const String getAllCategories = 'get_all_categories';
   static const String language = 'language';
   static const String appName = 'app_name';
   static const String login = 'login';
@@ -48,6 +64,7 @@ abstract class LangKeys {
   static const String categories = 'categories';
   static const String products = 'products';
   static const String users = 'users';
-  static const String dashBoard='dashBoard';
-  static const String refresh='refresh';
+  static const String dashBoard = 'dashBoard';
+  static const String refresh = 'refresh';
+  static const String addImage = 'add_image';
 }

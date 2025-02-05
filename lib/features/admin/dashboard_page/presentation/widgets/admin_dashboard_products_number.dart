@@ -29,7 +29,6 @@ class AdminDashboardProductsNumber extends StatelessWidget {
             theme: context.textStyle.copyWith(
               color: Colors.red,
             ),
-            textOverflow: TextOverflow.ellipsis,
             text: failure,
           ),
         );

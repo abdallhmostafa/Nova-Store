@@ -19,6 +19,7 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: backgroundColor,
+      forceMaterialTransparency: true,
       title: Text(
         title,
         style: context.textStyle.copyWith(
