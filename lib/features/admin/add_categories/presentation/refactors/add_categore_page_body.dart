@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nova_store/core/styles/colors/app_colors_dark.dart';
-import 'package:nova_store/features/admin/add_categories/presentation/bloc/bloc/admin_get_all_categories_bloc.dart';
+import 'package:nova_store/features/admin/add_categories/presentation/bloc/get_all_categories_bloc/admin_get_all_categories_bloc.dart';
 import 'package:nova_store/features/admin/add_categories/presentation/refactors/all_categories_bloc_builder_section.dart';
 import 'package:nova_store/features/admin/add_categories/presentation/widgets/create/get_all_categories_section.dart';
 

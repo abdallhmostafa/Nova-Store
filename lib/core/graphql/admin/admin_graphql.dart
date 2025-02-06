@@ -1,3 +1,5 @@
+import 'package:nova_store/features/admin/add_categories/data/model/admin_create_category_request_model.dart';
+
 class AdminGraphql {
   factory AdminGraphql() => instance;
   AdminGraphql._();
@@ -51,6 +53,29 @@ class AdminGraphql {
   }
 }
     ''',
+    };
+  }
+
+  Map<String, dynamic> createCategory({
+    required AdminCreateCategoryRequestModel createCategoryRequest,
+  }) {
+    return {
+      'query': r'''
+mutation createCategory ($name: String!, $image: String!) {
+	addCategory(
+		data: { name: $name, image: $image }
+	) {
+		id
+		name
+		image
+	}
+}
+
+    ''',
+      'variables': {
+        'name': createCategoryRequest.name,
+        'image': createCategoryRequest.image,
+      },
     };
   }
 }

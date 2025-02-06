@@ -5,7 +5,7 @@ import 'package:nova_store/core/common/widgets/text_app.dart';
 import 'package:nova_store/core/network/graphql/graphql_error_model.dart';
 import 'package:nova_store/core/themes/app_text_style.dart';
 import 'package:nova_store/features/admin/add_categories/data/model/admin_category_model_response.dart';
-import 'package:nova_store/features/admin/add_categories/presentation/bloc/bloc/admin_get_all_categories_bloc.dart';
+import 'package:nova_store/features/admin/add_categories/presentation/bloc/get_all_categories_bloc/admin_get_all_categories_bloc.dart';
 import 'package:nova_store/features/admin/add_categories/presentation/widgets/add_category_item.dart';
 import 'package:nova_store/features/admin/add_categories/presentation/widgets/empty_categories_list.dart';
 

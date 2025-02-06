@@ -14,7 +14,8 @@ import 'package:nova_store/core/network/dio_factory.dart';
 import 'package:nova_store/core/services/shared_pref/shared_pref.dart';
 import 'package:nova_store/features/admin/add_categories/data/datasource/admin_categories_datasource.dart';
 import 'package:nova_store/features/admin/add_categories/data/repos/admin_categories_repo_impl.dart';
-import 'package:nova_store/features/admin/add_categories/presentation/bloc/bloc/admin_get_all_categories_bloc.dart';
+import 'package:nova_store/features/admin/add_categories/presentation/bloc/admin_create_category_bloc/admin_create_category_bloc.dart';
+import 'package:nova_store/features/admin/add_categories/presentation/bloc/get_all_categories_bloc/admin_get_all_categories_bloc.dart';
 import 'package:nova_store/features/admin/dashboard_page/data/datasource/admin_dashboard_datasource.dart';
 import 'package:nova_store/features/admin/dashboard_page/data/repos/admin_dashboard_repo_impl.dart';
 import 'package:nova_store/features/admin/dashboard_page/presentation/bloc/get_categories_number_admin_dashboard_cubit/get_categories_number_admin_dashboard_cubit.dart';
@@ -134,6 +135,11 @@ void _adminCategories() {
     )
     ..registerFactory<AdminGetAllCategoriesBloc>(
       () => AdminGetAllCategoriesBloc(
+        serviceLocator<AdminCategoriesRepoImpl>(),
+      ),
+    )
+    ..registerFactory<AdminCreateCategoryBloc>(
+      () => AdminCreateCategoryBloc(
         serviceLocator<AdminCategoriesRepoImpl>(),
       ),
     );
