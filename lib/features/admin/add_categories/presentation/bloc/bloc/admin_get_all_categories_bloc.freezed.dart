@@ -181,6 +181,7 @@ mixin _$AdminGetAllCategoriesState {
     required TResult Function(
             AdminCategoryModelResponse adminCategoryModelResponse)
         success,
+    required TResult Function() empty,
     required TResult Function(GraphqlErrorModel graphqlErrorModel) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -189,6 +190,7 @@ mixin _$AdminGetAllCategoriesState {
     TResult? Function()? loading,
     TResult? Function(AdminCategoryModelResponse adminCategoryModelResponse)?
         success,
+    TResult? Function()? empty,
     TResult? Function(GraphqlErrorModel graphqlErrorModel)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -197,6 +199,7 @@ mixin _$AdminGetAllCategoriesState {
     TResult Function()? loading,
     TResult Function(AdminCategoryModelResponse adminCategoryModelResponse)?
         success,
+    TResult Function()? empty,
     TResult Function(GraphqlErrorModel graphqlErrorModel)? failure,
     required TResult orElse(),
   }) =>
@@ -205,6 +208,7 @@ mixin _$AdminGetAllCategoriesState {
   TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
+    required TResult Function(Empty value) empty,
     required TResult Function(Failure value) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -212,6 +216,7 @@ mixin _$AdminGetAllCategoriesState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
+    TResult? Function(Empty value)? empty,
     TResult? Function(Failure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -219,6 +224,7 @@ mixin _$AdminGetAllCategoriesState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
+    TResult Function(Empty value)? empty,
     TResult Function(Failure value)? failure,
     required TResult orElse(),
   }) =>
@@ -293,6 +299,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function(
             AdminCategoryModelResponse adminCategoryModelResponse)
         success,
+    required TResult Function() empty,
     required TResult Function(GraphqlErrorModel graphqlErrorModel) failure,
   }) {
     return loading();
@@ -304,6 +311,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function()? loading,
     TResult? Function(AdminCategoryModelResponse adminCategoryModelResponse)?
         success,
+    TResult? Function()? empty,
     TResult? Function(GraphqlErrorModel graphqlErrorModel)? failure,
   }) {
     return loading?.call();
@@ -315,6 +323,7 @@ class _$LoadingImpl implements Loading {
     TResult Function()? loading,
     TResult Function(AdminCategoryModelResponse adminCategoryModelResponse)?
         success,
+    TResult Function()? empty,
     TResult Function(GraphqlErrorModel graphqlErrorModel)? failure,
     required TResult orElse(),
   }) {
@@ -329,6 +338,7 @@ class _$LoadingImpl implements Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
+    required TResult Function(Empty value) empty,
     required TResult Function(Failure value) failure,
   }) {
     return loading(this);
@@ -339,6 +349,7 @@ class _$LoadingImpl implements Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
+    TResult? Function(Empty value)? empty,
     TResult? Function(Failure value)? failure,
   }) {
     return loading?.call(this);
@@ -349,6 +360,7 @@ class _$LoadingImpl implements Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
+    TResult Function(Empty value)? empty,
     TResult Function(Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -438,6 +450,7 @@ class _$SuccessImpl implements Success {
     required TResult Function(
             AdminCategoryModelResponse adminCategoryModelResponse)
         success,
+    required TResult Function() empty,
     required TResult Function(GraphqlErrorModel graphqlErrorModel) failure,
   }) {
     return success(adminCategoryModelResponse);
@@ -449,6 +462,7 @@ class _$SuccessImpl implements Success {
     TResult? Function()? loading,
     TResult? Function(AdminCategoryModelResponse adminCategoryModelResponse)?
         success,
+    TResult? Function()? empty,
     TResult? Function(GraphqlErrorModel graphqlErrorModel)? failure,
   }) {
     return success?.call(adminCategoryModelResponse);
@@ -460,6 +474,7 @@ class _$SuccessImpl implements Success {
     TResult Function()? loading,
     TResult Function(AdminCategoryModelResponse adminCategoryModelResponse)?
         success,
+    TResult Function()? empty,
     TResult Function(GraphqlErrorModel graphqlErrorModel)? failure,
     required TResult orElse(),
   }) {
@@ -474,6 +489,7 @@ class _$SuccessImpl implements Success {
   TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
+    required TResult Function(Empty value) empty,
     required TResult Function(Failure value) failure,
   }) {
     return success(this);
@@ -484,6 +500,7 @@ class _$SuccessImpl implements Success {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
+    TResult? Function(Empty value)? empty,
     TResult? Function(Failure value)? failure,
   }) {
     return success?.call(this);
@@ -494,6 +511,7 @@ class _$SuccessImpl implements Success {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
+    TResult Function(Empty value)? empty,
     TResult Function(Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -516,6 +534,127 @@ abstract class Success implements AdminGetAllCategoriesState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EmptyImplCopyWith<$Res> {
+  factory _$$EmptyImplCopyWith(
+          _$EmptyImpl value, $Res Function(_$EmptyImpl) then) =
+      __$$EmptyImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EmptyImplCopyWithImpl<$Res>
+    extends _$AdminGetAllCategoriesStateCopyWithImpl<$Res, _$EmptyImpl>
+    implements _$$EmptyImplCopyWith<$Res> {
+  __$$EmptyImplCopyWithImpl(
+      _$EmptyImpl _value, $Res Function(_$EmptyImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminGetAllCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$EmptyImpl implements Empty {
+  const _$EmptyImpl();
+
+  @override
+  String toString() {
+    return 'AdminGetAllCategoriesState.empty()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EmptyImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(
+            AdminCategoryModelResponse adminCategoryModelResponse)
+        success,
+    required TResult Function() empty,
+    required TResult Function(GraphqlErrorModel graphqlErrorModel) failure,
+  }) {
+    return empty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(AdminCategoryModelResponse adminCategoryModelResponse)?
+        success,
+    TResult? Function()? empty,
+    TResult? Function(GraphqlErrorModel graphqlErrorModel)? failure,
+  }) {
+    return empty?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(AdminCategoryModelResponse adminCategoryModelResponse)?
+        success,
+    TResult Function()? empty,
+    TResult Function(GraphqlErrorModel graphqlErrorModel)? failure,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Loading value) loading,
+    required TResult Function(Success value) success,
+    required TResult Function(Empty value) empty,
+    required TResult Function(Failure value) failure,
+  }) {
+    return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Success value)? success,
+    TResult? Function(Empty value)? empty,
+    TResult? Function(Failure value)? failure,
+  }) {
+    return empty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Loading value)? loading,
+    TResult Function(Success value)? success,
+    TResult Function(Empty value)? empty,
+    TResult Function(Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Empty implements AdminGetAllCategoriesState {
+  const factory Empty() = _$EmptyImpl;
 }
 
 /// @nodoc
@@ -591,6 +730,7 @@ class _$FailureImpl implements Failure {
     required TResult Function(
             AdminCategoryModelResponse adminCategoryModelResponse)
         success,
+    required TResult Function() empty,
     required TResult Function(GraphqlErrorModel graphqlErrorModel) failure,
   }) {
     return failure(graphqlErrorModel);
@@ -602,6 +742,7 @@ class _$FailureImpl implements Failure {
     TResult? Function()? loading,
     TResult? Function(AdminCategoryModelResponse adminCategoryModelResponse)?
         success,
+    TResult? Function()? empty,
     TResult? Function(GraphqlErrorModel graphqlErrorModel)? failure,
   }) {
     return failure?.call(graphqlErrorModel);
@@ -613,6 +754,7 @@ class _$FailureImpl implements Failure {
     TResult Function()? loading,
     TResult Function(AdminCategoryModelResponse adminCategoryModelResponse)?
         success,
+    TResult Function()? empty,
     TResult Function(GraphqlErrorModel graphqlErrorModel)? failure,
     required TResult orElse(),
   }) {
@@ -627,6 +769,7 @@ class _$FailureImpl implements Failure {
   TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
     required TResult Function(Success value) success,
+    required TResult Function(Empty value) empty,
     required TResult Function(Failure value) failure,
   }) {
     return failure(this);
@@ -637,6 +780,7 @@ class _$FailureImpl implements Failure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Loading value)? loading,
     TResult? Function(Success value)? success,
+    TResult? Function(Empty value)? empty,
     TResult? Function(Failure value)? failure,
   }) {
     return failure?.call(this);
@@ -647,6 +791,7 @@ class _$FailureImpl implements Failure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Loading value)? loading,
     TResult Function(Success value)? success,
+    TResult Function(Empty value)? empty,
     TResult Function(Failure value)? failure,
     required TResult orElse(),
   }) {

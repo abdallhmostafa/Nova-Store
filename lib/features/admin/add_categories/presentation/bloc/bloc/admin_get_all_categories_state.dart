@@ -6,6 +6,7 @@ class AdminGetAllCategoriesState with _$AdminGetAllCategoriesState {
   const factory AdminGetAllCategoriesState.success(
     AdminCategoryModelResponse adminCategoryModelResponse,
   ) = Success;
+  const factory AdminGetAllCategoriesState.empty() = Empty;
   const factory AdminGetAllCategoriesState.failure(
     GraphqlErrorModel graphqlErrorModel,
   ) = Failure;

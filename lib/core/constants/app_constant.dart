@@ -6,4 +6,5 @@ abstract class AppConstant {
   static double horizontalPadding = 20.0.w;
   static double verticalPadding = 20.0.h;
   static int fadeInDuration = 300;
+  static String imageCacheKey = 'imageCacheKey';
 }

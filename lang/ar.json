@@ -72,6 +72,7 @@
     "edit_the_category_name":"تعديل اسم التصنيف",
     "edit_the_image":"تعديل الصورة",
     "edit_category":"تعديل التصنيف",
-    "edit_the_category":"تعديل التصنيف"
+    "edit_the_category":"تعديل التصنيف",
+    "no_categories_you_can_add_one":"لا يوجد تصنيفات بعد,\n يمكنك اضافة تصنيف جديد"
     
 }

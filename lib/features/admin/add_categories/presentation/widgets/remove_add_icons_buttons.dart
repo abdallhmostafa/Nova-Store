@@ -23,6 +23,10 @@ class RemoveAddButtons extends StatelessWidget {
           ),
           child: IconButton(
             visualDensity: VisualDensity.compact,
+            constraints: BoxConstraints(
+              maxHeight: 24.h,
+              maxWidth: 24.w,
+            ),
             padding: EdgeInsets.zero,
             onPressed: () {
               CustomBottomSheet.showCustomBottomSheet(
@@ -35,7 +39,7 @@ class RemoveAddButtons extends StatelessWidget {
               );
             },
             color: Colors.white,
-            icon: Icon(Icons.edit_sharp, size: 26.w),
+            icon: Icon(Icons.edit_sharp, size: 22.w),
           ),
         ),
       ],

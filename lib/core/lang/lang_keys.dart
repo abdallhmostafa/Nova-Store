@@ -1,4 +1,5 @@
 abstract class LangKeys {
+  static const String noCategoriesYouCanAddOne = 'no_categories_you_can_add_one';
   static const String editTheCategory = 'edit_the_category';
   static const String editTheImage = 'edit_the_image';
   static const String editTheCategoryName='edit_the_category_name';

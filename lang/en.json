@@ -68,6 +68,7 @@
     "edit_the_category_name":"Edit the category name",
     "edit_the_image":"Edit the image",
     "edit_category":"Edit Category",
-    "edit_the_category":"Edit the category"
+    "edit_the_category":"Edit the category",
+    "no_categories_you_can_add_one":"There are no categories yet,\n you can add one"
     
 }
