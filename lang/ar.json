@@ -68,5 +68,10 @@
     "category_name_updated_error":"حدث خطاء ما عند تحديث اسم التصنيف، حاول مرة اخرى",
     "category_added_error":"حدث خطاء ما عند انشاء التصنيف، حاول مرة اخرى",
     "category_removed_error":"حدث خطاء ما عند حذف التصنيف، حاول مرة اخرى",
-    "name_must_be_at_least_3_characters":"اسم التصنيف يجب ان يحتوي على اقل من 3 حروف"
+    "name_must_be_at_least_3_characters":"اسم التصنيف يجب ان يحتوي على اقل من 3 حروف",
+    "edit_the_category_name":"تعديل اسم التصنيف",
+    "edit_the_image":"تعديل الصورة",
+    "edit_category":"تعديل التصنيف",
+    "edit_the_category":"تعديل التصنيف"
+    
 }

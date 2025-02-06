@@ -39,4 +39,18 @@ class AdminGraphql {
     ''',
     };
   }
+
+  Map<String, dynamic> getAllCategories() {
+    return {
+      'query': '''
+    {
+  categories{
+		id
+		name
+		image
+  }
+}
+    ''',
+    };
+  }
 }

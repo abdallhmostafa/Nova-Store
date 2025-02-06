@@ -10,8 +10,13 @@ import 'package:nova_store/core/themes/app_text_style.dart';
 import 'package:nova_store/features/admin/add_categories/presentation/widgets/category_upload_image.dart';
 
 class CreateAddCategoryBottomSheet extends StatefulWidget {
-  const CreateAddCategoryBottomSheet({super.key});
-
+  const CreateAddCategoryBottomSheet({
+    this.isEdit = false,
+    super.key,
+    this.hintText,
+  });
+  final bool isEdit;
+  final String? hintText;
   @override
   State<CreateAddCategoryBottomSheet> createState() =>
       _CreateAddCategoryBottomSheetState();
@@ -37,13 +42,17 @@ class _CreateAddCategoryBottomSheetState
           spacing: 10.h,
           children: [
             TextApp(
-              text: context.translate(LangKeys.createCategory),
+              text: widget.isEdit
+                  ? context.translate(LangKeys.editCategory)
+                  : context.translate(LangKeys.createCategory),
               theme: AppTextStyles.f20BoldWhite,
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: TextApp(
-                text: context.translate(LangKeys.addImage),
+                text: widget.isEdit
+                    ? context.translate(LangKeys.editTheImage)
+                    : context.translate(LangKeys.addImage),
                 theme: AppTextStyles.f16MediumWhite,
               ),
             ),
@@ -68,7 +77,8 @@ class _CreateAddCategoryBottomSheetState
                   return null;
                 }
               },
-              hintText: context.translate(LangKeys.categoryName),
+              hintText:
+                  widget.hintText ?? context.translate(LangKeys.categoryName),
             ),
             SizedBox(
               width: double.infinity,
@@ -78,7 +88,9 @@ class _CreateAddCategoryBottomSheetState
                 lastRadius: 20,
                 textColor: AppColorsDark.blueDark,
                 threeRadius: 20,
-                text: context.translate(LangKeys.createNewCategory),
+                text: widget.isEdit
+                    ? context.translate(LangKeys.editTheCategory)
+                    : context.translate(LangKeys.createNewCategory),
               ),
             ),
           ],

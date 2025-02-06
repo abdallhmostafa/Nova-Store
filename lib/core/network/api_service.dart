@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:nova_store/core/app/upload_image/model/upload_image_response_model.dart';
+import 'package:nova_store/features/admin/add_categories/data/model/admin_category_model_response.dart';
 import 'package:nova_store/features/admin/dashboard_page/data/models/categories_number_model_response.dart';
 import 'package:nova_store/features/admin/dashboard_page/data/models/product_number_model_response.dart';
 import 'package:nova_store/features/admin/dashboard_page/data/models/users_number_model_response.dart';
@@ -46,5 +47,9 @@ abstract class ApiService {
   @POST(_graphql)
   Future<UsersNumberModelResponse> getUsersNumber(
     @Body() Map<String, dynamic> usersNumberRequest,
+  );
+  @POST(_graphql)
+  Future<AdminCategoryModelResponse> getAllCategories(
+    @Body() Map<String, dynamic> categoriesRequest,
   );
 }

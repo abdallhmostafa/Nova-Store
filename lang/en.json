@@ -64,5 +64,10 @@
     "please_enter_the_name_of_the_category":"Please enter the name of the category",
     "category_added_successfully":"Category added successfully",
     "category_removed_successfully":"Category removed successfully",
-    "category_updated_successfully":"Category updated successfully"
+    "category_updated_successfully":"Category updated successfully",
+    "edit_the_category_name":"Edit the category name",
+    "edit_the_image":"Edit the image",
+    "edit_category":"Edit Category",
+    "edit_the_category":"Edit the category"
+    
 }

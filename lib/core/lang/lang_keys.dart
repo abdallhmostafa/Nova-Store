@@ -1,4 +1,9 @@
 abstract class LangKeys {
+  static const String editTheCategory = 'edit_the_category';
+  static const String editTheImage = 'edit_the_image';
+  static const String editTheCategoryName='edit_the_category_name';
+  static const String editCategory ='edit_category';
+
   static const String createNewCategory = 'create_new_category';
   static const String categoryName = 'category_name';
   static const String enterTheCategoryName = 'enter_the_category_name';

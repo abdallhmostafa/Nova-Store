@@ -12,6 +12,9 @@ import 'package:nova_store/core/helper/secure_storage_helper.dart';
 import 'package:nova_store/core/network/api_service.dart';
 import 'package:nova_store/core/network/dio_factory.dart';
 import 'package:nova_store/core/services/shared_pref/shared_pref.dart';
+import 'package:nova_store/features/admin/add_categories/data/datasource/admin_categories_datasource.dart';
+import 'package:nova_store/features/admin/add_categories/data/repos/admin_categories_repo_impl.dart';
+import 'package:nova_store/features/admin/add_categories/presentation/bloc/bloc/admin_get_all_categories_bloc.dart';
 import 'package:nova_store/features/admin/dashboard_page/data/datasource/admin_dashboard_datasource.dart';
 import 'package:nova_store/features/admin/dashboard_page/data/repos/admin_dashboard_repo_impl.dart';
 import 'package:nova_store/features/admin/dashboard_page/presentation/bloc/get_categories_number_admin_dashboard_cubit/get_categories_number_admin_dashboard_cubit.dart';
@@ -24,7 +27,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 final GetIt serviceLocator = GetIt.instance;
 
-void setupServiceLocator() {
+Future<void> setupServiceLocator() async {
   final navigatorKey = GlobalKey<NavigatorState>();
   serviceLocator
     ..registerFactory(AppCubit.new)
@@ -32,6 +35,23 @@ void setupServiceLocator() {
     ..registerLazySingleton(
       () => ApiService(DioFactory(dio: Dio()).getDio()),
     )
+    ..registerLazySingleton<SharedPreferences>(
+      () => SharedPref.sharedPreferences,
+    )
+    ..registerLazySingleton<SecureStorageHelper>(
+      () => SecureStorageHelper(const FlutterSecureStorage()),
+    )
+    ..registerSingleton<GlobalKey<NavigatorState>>(
+      navigatorKey,
+    );
+
+  _authService();
+  _uploadImageService();
+  _admin();
+}
+
+void _authService() {
+  serviceLocator
     ..registerSingleton(DioFactory(dio: Dio()))
     ..registerLazySingleton<AuthDataSource>(
       () => AuthDataSource(
@@ -45,22 +65,10 @@ void setupServiceLocator() {
     )
     ..registerFactory<AuthBloc>(
       () => AuthBloc(authRepositoryImpl: serviceLocator<AuthRepositoryImpl>()),
-    )
-    ..registerLazySingleton<SharedPreferences>(
-      () => SharedPref.sharedPreferences,
-    )
-    ..registerLazySingleton<SecureStorageHelper>(
-      () => SecureStorageHelper(const FlutterSecureStorage()),
-    )
-    ..registerSingleton<GlobalKey<NavigatorState>>(
-      navigatorKey,
     );
-
-  _uploadImageService();
-  _admin();
 }
 
-Future<void> _uploadImageService() async {
+void _uploadImageService() {
   serviceLocator
     ..registerLazySingleton<UploadImageDatasource>(
       () => UploadImageDatasource(serviceLocator<ApiService>()),
@@ -73,7 +81,12 @@ Future<void> _uploadImageService() async {
     );
 }
 
-Future<void> _admin() async {
+void _admin() {
+  _adminDashboard();
+  _adminCategories();
+}
+
+void _adminDashboard() {
   serviceLocator
     ..registerLazySingleton<AdminGraphql>(
       AdminGraphql.new,
@@ -88,12 +101,7 @@ Future<void> _admin() async {
       () => AdminDashboardRepoImpl(
         adminDashboardDataSource: serviceLocator<AdminDashboardDatasource>(),
       ),
-    );
-    _adminDashboardCubits();
-}
-
-void _adminDashboardCubits() {
-  serviceLocator
+    )
     ..registerFactory<GetCategoriesNumberAdminDashboardCubit>(
       () => GetCategoriesNumberAdminDashboardCubit(
         serviceLocator<AdminDashboardRepoImpl>(),
@@ -107,6 +115,26 @@ void _adminDashboardCubits() {
     ..registerFactory<GetUsersNumberAdminDashboardCubit>(
       () => GetUsersNumberAdminDashboardCubit(
         serviceLocator<AdminDashboardRepoImpl>(),
+      ),
+    );
+}
+
+void _adminCategories() {
+  serviceLocator
+    ..registerLazySingleton<AdminCategoriesDatasource>(
+      () => AdminCategoriesDatasource(
+        serviceLocator<ApiService>(),
+        serviceLocator<AdminGraphql>(),
+      ),
+    )
+    ..registerLazySingleton<AdminCategoriesRepoImpl>(
+      () => AdminCategoriesRepoImpl(
+        serviceLocator<AdminCategoriesDatasource>(),
+      ),
+    )
+    ..registerFactory<AdminGetAllCategoriesBloc>(
+      () => AdminGetAllCategoriesBloc(
+        serviceLocator<AdminCategoriesRepoImpl>(),
       ),
     );
 }
