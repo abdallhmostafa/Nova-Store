@@ -20,7 +20,9 @@ class AdminGetAllCategoriesBloc
     AdminGetAllCategoriesEvent event,
     Emitter<AdminGetAllCategoriesState> emit,
   ) async {
-    emit(const AdminGetAllCategoriesState.loading());
+    if (event.refresh) {
+      emit(const AdminGetAllCategoriesState.loading());
+    }
     final result = await adminCategoriesRepoImpl.getAllCategories();
     result.when(
       success: (response) {

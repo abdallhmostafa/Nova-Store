@@ -16,38 +16,45 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AdminGetAllCategoriesEvent {
+  bool get refresh => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getAllCategories,
+    required TResult Function(bool refresh) getAllCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getAllCategories,
+    TResult? Function(bool refresh)? getAllCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getAllCategories,
+    TResult Function(bool refresh)? getAllCategories,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetAllCategories value) getAllCategories,
+    required TResult Function(GetAllCategories value) getAllCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetAllCategories value)? getAllCategories,
+    TResult? Function(GetAllCategories value)? getAllCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetAllCategories value)? getAllCategories,
+    TResult Function(GetAllCategories value)? getAllCategories,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Create a copy of AdminGetAllCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AdminGetAllCategoriesEventCopyWith<AdminGetAllCategoriesEvent>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -56,6 +63,8 @@ abstract class $AdminGetAllCategoriesEventCopyWith<$Res> {
           $Res Function(AdminGetAllCategoriesEvent) then) =
       _$AdminGetAllCategoriesEventCopyWithImpl<$Res,
           AdminGetAllCategoriesEvent>;
+  @useResult
+  $Res call({bool refresh});
 }
 
 /// @nodoc
@@ -71,13 +80,29 @@ class _$AdminGetAllCategoriesEventCopyWithImpl<$Res,
 
   /// Create a copy of AdminGetAllCategoriesEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? refresh = null,
+  }) {
+    return _then(_value.copyWith(
+      refresh: null == refresh
+          ? _value.refresh
+          : refresh // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$GetAllCategoriesImplCopyWith<$Res> {
+abstract class _$$GetAllCategoriesImplCopyWith<$Res>
+    implements $AdminGetAllCategoriesEventCopyWith<$Res> {
   factory _$$GetAllCategoriesImplCopyWith(_$GetAllCategoriesImpl value,
           $Res Function(_$GetAllCategoriesImpl) then) =
       __$$GetAllCategoriesImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool refresh});
 }
 
 /// @nodoc
@@ -91,51 +116,77 @@ class __$$GetAllCategoriesImplCopyWithImpl<$Res>
 
   /// Create a copy of AdminGetAllCategoriesEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? refresh = null,
+  }) {
+    return _then(_$GetAllCategoriesImpl(
+      refresh: null == refresh
+          ? _value.refresh
+          : refresh // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$GetAllCategoriesImpl implements _GetAllCategories {
-  const _$GetAllCategoriesImpl();
+class _$GetAllCategoriesImpl implements GetAllCategories {
+  const _$GetAllCategoriesImpl({required this.refresh});
+
+  @override
+  final bool refresh;
 
   @override
   String toString() {
-    return 'AdminGetAllCategoriesEvent.getAllCategories()';
+    return 'AdminGetAllCategoriesEvent.getAllCategories(refresh: $refresh)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetAllCategoriesImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllCategoriesImpl &&
+            (identical(other.refresh, refresh) || other.refresh == refresh));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, refresh);
+
+  /// Create a copy of AdminGetAllCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAllCategoriesImplCopyWith<_$GetAllCategoriesImpl> get copyWith =>
+      __$$GetAllCategoriesImplCopyWithImpl<_$GetAllCategoriesImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getAllCategories,
+    required TResult Function(bool refresh) getAllCategories,
   }) {
-    return getAllCategories();
+    return getAllCategories(refresh);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getAllCategories,
+    TResult? Function(bool refresh)? getAllCategories,
   }) {
-    return getAllCategories?.call();
+    return getAllCategories?.call(refresh);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getAllCategories,
+    TResult Function(bool refresh)? getAllCategories,
     required TResult orElse(),
   }) {
     if (getAllCategories != null) {
-      return getAllCategories();
+      return getAllCategories(refresh);
     }
     return orElse();
   }
@@ -143,7 +194,7 @@ class _$GetAllCategoriesImpl implements _GetAllCategories {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetAllCategories value) getAllCategories,
+    required TResult Function(GetAllCategories value) getAllCategories,
   }) {
     return getAllCategories(this);
   }
@@ -151,7 +202,7 @@ class _$GetAllCategoriesImpl implements _GetAllCategories {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetAllCategories value)? getAllCategories,
+    TResult? Function(GetAllCategories value)? getAllCategories,
   }) {
     return getAllCategories?.call(this);
   }
@@ -159,7 +210,7 @@ class _$GetAllCategoriesImpl implements _GetAllCategories {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetAllCategories value)? getAllCategories,
+    TResult Function(GetAllCategories value)? getAllCategories,
     required TResult orElse(),
   }) {
     if (getAllCategories != null) {
@@ -169,8 +220,19 @@ class _$GetAllCategoriesImpl implements _GetAllCategories {
   }
 }
 
-abstract class _GetAllCategories implements AdminGetAllCategoriesEvent {
-  const factory _GetAllCategories() = _$GetAllCategoriesImpl;
+abstract class GetAllCategories implements AdminGetAllCategoriesEvent {
+  const factory GetAllCategories({required final bool refresh}) =
+      _$GetAllCategoriesImpl;
+
+  @override
+  bool get refresh;
+
+  /// Create a copy of AdminGetAllCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetAllCategoriesImplCopyWith<_$GetAllCategoriesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

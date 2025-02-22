@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:nova_store/core/app/upload_image/cubit/upload_image_cubit.dart';
 import 'package:nova_store/core/network/graphql/graphql_error_model.dart';
 import 'package:nova_store/features/admin/add_categories/data/model/admin_create_category_reponse_model.dart';
 import 'package:nova_store/features/admin/add_categories/data/model/admin_create_category_request_model.dart';
@@ -23,8 +25,21 @@ class AdminCreateCategoryBloc
     Emitter<AdminCreateCategoryState> emit,
   ) async {
     emit(const AdminCreateCategoryState.loading());
+    final cubit = event.context.read<UploadImageCubit>();
+    final isImageUploaded = await uploadImage(context: event.context);
+    if (!isImageUploaded) {
+      emit(
+        AdminCreateCategoryState.error(
+          error:  GraphqlErrorModel(data:'Oops, Cant Upload Image'),
+        ),
+      );
+      return;
+    }
     final result = await adminCategoriesRepoImpl.createCategory(
-      createCategoryRequest: event.createCategoryRequest,
+      createCategoryRequest: AdminCreateCategoryRequestModel(
+        name: event.name,
+        image: cubit.imageUrl!,
+      ),
     );
     result.when(
       success: (response) {
@@ -42,5 +57,20 @@ class AdminCreateCategoryBloc
         );
       },
     );
+  }
+
+  Future<bool> uploadImage({
+    required BuildContext context,
+  }) async {
+    final cubit = context.read<UploadImageCubit>();
+    await cubit.uploadSelectedImage(
+      xFile: cubit.slectedImage!,
+    );
+    if (cubit.imageUrl != null) {
+      return true;
+      } else {
+        
+        return false;
+      }
   }
 }

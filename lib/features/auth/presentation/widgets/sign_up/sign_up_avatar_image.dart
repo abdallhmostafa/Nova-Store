@@ -30,7 +30,7 @@ class SignUpAvatarImage extends StatelessWidget {
                     radius: 50,
                     backgroundColor: const Color.fromRGBO(0, 0, 0, 0.5),
                     backgroundImage:
-                        state is Success ? NetworkImage(cubit.imageUrl) : null,
+                        state is Success ? NetworkImage(cubit.imageUrl!) : null,
                     child: state is Loading
                         ? const CircularProgressIndicator(
                             color: Colors.white,

@@ -69,6 +69,9 @@
     "edit_the_image":"Edit the image",
     "edit_category":"Edit Category",
     "edit_the_category":"Edit the category",
-    "no_categories_you_can_add_one":"There are no categories yet,\n you can add one"
+    "no_categories_you_can_add_one":"There are no categories yet,\n you can add one",
+    "category_created_successfully":"Category created successfully",
+    "category_deleted_successfully":"Category deleted successfully",
+    "deleting_the_category":"Deleting the category..."
     
 }

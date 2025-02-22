@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:nova_store/core/app/upload_image/model/upload_image_response_model.dart';
 import 'package:nova_store/features/admin/add_categories/data/model/admin_category_model_response.dart';
 import 'package:nova_store/features/admin/add_categories/data/model/admin_create_category_reponse_model.dart';
+import 'package:nova_store/features/admin/add_categories/data/model/admin_delete_category_response_model.dart';
+import 'package:nova_store/features/admin/add_categories/data/model/admin_update_category_response_model.dart';
 import 'package:nova_store/features/admin/dashboard_page/data/models/categories_number_model_response.dart';
 import 'package:nova_store/features/admin/dashboard_page/data/models/product_number_model_response.dart';
 import 'package:nova_store/features/admin/dashboard_page/data/models/users_number_model_response.dart';
@@ -56,5 +58,14 @@ abstract class ApiService {
   @POST(_graphql)
   Future<AdminCreateCategoryResponseModel> createCategory(
     @Body() Map<String, dynamic> createCategoryRequest,
+  );
+  @POST(_graphql)
+  Future<AdminDeleteCategoryResponseModel> deleteCategory(
+    @Body() Map<String, dynamic> deleteCategoryRequest,
+  );
+
+  @POST(_graphql)
+  Future<AdminUpdateCategoryResponseModel> updateCategory(
+    @Body() Map<String, dynamic> updateCategoryRequest,
   );
 }

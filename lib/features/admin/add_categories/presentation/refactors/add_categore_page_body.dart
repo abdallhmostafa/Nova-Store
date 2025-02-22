@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nova_store/core/styles/colors/app_colors_dark.dart';
 import 'package:nova_store/features/admin/add_categories/presentation/bloc/get_all_categories_bloc/admin_get_all_categories_bloc.dart';
 import 'package:nova_store/features/admin/add_categories/presentation/refactors/all_categories_bloc_builder_section.dart';
+import 'package:nova_store/features/admin/add_categories/presentation/widgets/admin_delete_category_bloc_listener.dart';
 import 'package:nova_store/features/admin/add_categories/presentation/widgets/create/get_all_categories_section.dart';
 
 class AddCategorePageBody extends StatelessWidget {
@@ -22,7 +23,9 @@ class AddCategorePageBody extends StatelessWidget {
             child: RefreshIndicator.adaptive(
               onRefresh: () async {
                 context.read<AdminGetAllCategoriesBloc>().add(
-                      const AdminGetAllCategoriesEvent.getAllCategories(),
+                      const AdminGetAllCategoriesEvent.getAllCategories(
+                        refresh: true,
+                      ),
                     );
               },
               backgroundColor: Colors.white,
@@ -30,6 +33,7 @@ class AddCategorePageBody extends StatelessWidget {
               child: const AllCategoriesBlocBuilderSection(),
             ),
           ),
+          const AdminDeleteCategoryBlocListener(),
         ],
       ),
     );

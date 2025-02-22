@@ -5,7 +5,8 @@ import 'package:nova_store/core/di/dependency_injection.dart';
 import 'package:nova_store/core/extensions/context_extention.dart';
 import 'package:nova_store/core/lang/lang_keys.dart';
 import 'package:nova_store/features/admin/add_categories/data/repos/admin_categories_repo_impl.dart';
-import 'package:nova_store/features/admin/add_categories/presentation/bloc/admin_create_category_bloc/admin_create_category_bloc.dart';
+import 'package:nova_store/features/admin/add_categories/presentation/bloc/admin_delete_category_cubit/admin_delete_category_cubit.dart';
+import 'package:nova_store/features/admin/add_categories/presentation/bloc/admin_update_category_cubit/admin_update_category_cubit.dart';
 import 'package:nova_store/features/admin/add_categories/presentation/bloc/get_all_categories_bloc/admin_get_all_categories_bloc.dart';
 import 'package:nova_store/features/admin/add_categories/presentation/refactors/add_categore_page_body.dart';
 
@@ -19,10 +20,17 @@ class AddCategorePage extends StatelessWidget {
         BlocProvider(
           create: (context) => AdminGetAllCategoriesBloc(
             serviceLocator<AdminCategoriesRepoImpl>(),
-          )..add(const AdminGetAllCategoriesEvent.getAllCategories()),
+          )..add(
+              const AdminGetAllCategoriesEvent.getAllCategories(refresh: true),
+            ),
         ),
         BlocProvider(
-          create: (context) => AdminCreateCategoryBloc(
+          create: (context) => AdminDeleteCategoryCubit(
+            serviceLocator<AdminCategoriesRepoImpl>(),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => AdminUpdateCategoryCubit(
             serviceLocator<AdminCategoriesRepoImpl>(),
           ),
         ),

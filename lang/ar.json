@@ -73,6 +73,8 @@
     "edit_the_image":"تعديل الصورة",
     "edit_category":"تعديل التصنيف",
     "edit_the_category":"تعديل التصنيف",
-    "no_categories_you_can_add_one":"لا يوجد تصنيفات بعد,\n يمكنك اضافة تصنيف جديد"
-    
+    "no_categories_you_can_add_one":"لا يوجد تصنيفات بعد,\n يمكنك اضافة تصنيف جديد",
+    "category_created_successfully":"تم انشاء التصنيف بنجاح",
+    "category_deleted_successfully":"تم حذف التصنيف بنجاح",
+    "deleting_the_category":"جاري حذف التصنيف..."
 }

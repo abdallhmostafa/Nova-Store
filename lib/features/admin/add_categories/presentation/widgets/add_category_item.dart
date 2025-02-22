@@ -13,11 +13,13 @@ class AddCategoryItem extends StatelessWidget {
   const AddCategoryItem({
     required this.title,
     required this.urlImage,
+    required this.id,
     super.key,
   });
 
   final String title;
   final String urlImage;
+  final String id;
   @override
   Widget build(BuildContext context) {
     return AdminCustomContainer(
@@ -31,7 +33,9 @@ class AddCategoryItem extends StatelessWidget {
               children: [
                 TextApp(text: title, theme: AppTextStyles.f18BoldWhite),
                 const Spacer(),
-                const RemoveAddButtons(),
+                 RemoveAddButtons(
+                   id: id,
+                 ),
               ],
             ),
           ),
@@ -39,6 +43,7 @@ class AddCategoryItem extends StatelessWidget {
             flex: 2,
             child: _cachedNetworkImage(),
           ),
+          
         ],
       ),
     );

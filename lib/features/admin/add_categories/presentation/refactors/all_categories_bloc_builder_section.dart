@@ -42,6 +42,8 @@ class AllCategoriesBlocBuilderSection extends StatelessWidget {
   }
 
   ListView _successState(AdminCategoryModelResponse data) {
+    // reversed the list of data
+    final reversedList = data.data?.categories?.reversed.toList();
     return ListView.separated(
       padding: EdgeInsets.zero,
       physics: const AlwaysScrollableScrollPhysics(),
@@ -50,8 +52,9 @@ class AllCategoriesBlocBuilderSection extends StatelessWidget {
           bottom: index == (data.data?.categories?.length ?? 1) - 1 ? 20 : 0,
         ),
         child: AddCategoryItem(
-          title: data.data?.categories?[index].name ?? '',
-          urlImage: data.data?.categories?[index].image ?? '',
+          title: reversedList?[index].name ?? '',
+          urlImage: reversedList?[index].image ?? '',
+          id:  reversedList?[index].id ?? '',
         ),
       ),
       separatorBuilder: (context, index) => const SizedBox(height: 10),

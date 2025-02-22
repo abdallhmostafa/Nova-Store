@@ -1,9 +1,15 @@
 abstract class LangKeys {
-  static const String noCategoriesYouCanAddOne = 'no_categories_you_can_add_one';
+  static const String deletingTheCategory = 'deleting_the_category';
+  static const String categoryDeletedSuccessfully =
+      'category_deleted_successfully';
+  static const String categoryCreatedSuccessfully =
+      'category_created_successfully';
+  static const String noCategoriesYouCanAddOne =
+      'no_categories_you_can_add_one';
   static const String editTheCategory = 'edit_the_category';
   static const String editTheImage = 'edit_the_image';
-  static const String editTheCategoryName='edit_the_category_name';
-  static const String editCategory ='edit_category';
+  static const String editTheCategoryName = 'edit_the_category_name';
+  static const String editCategory = 'edit_category';
 
   static const String createNewCategory = 'create_new_category';
   static const String categoryName = 'category_name';

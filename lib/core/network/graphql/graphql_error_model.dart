@@ -4,7 +4,7 @@ part 'graphql_error_model.g.dart';
 @JsonSerializable()
 class GraphqlErrorModel {
   GraphqlErrorModel({
-    required this.errors,
+    this.errors,
      this.data,
   });
 

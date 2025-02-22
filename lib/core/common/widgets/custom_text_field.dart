@@ -55,6 +55,11 @@ class CustomTextField extends StatelessWidget {
       keyboardType: keyboardType,
       obscureText: obscureText,
       maxLines: maxLines,
+      // onFieldSubmitted: (value) {
+      //   // close the keyboard
+        // FocusScope.of(context).requestFocus(FocusNode());
+
+      // },
       readOnly: readOnly,
       decoration: InputDecoration(
         border: OutlineInputBorder(

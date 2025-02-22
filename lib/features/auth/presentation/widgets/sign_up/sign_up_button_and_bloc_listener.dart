@@ -26,10 +26,10 @@ class SignUpButtonAndBlocListener extends StatelessWidget {
           isLogin: false,
           onPressed: () {
             if (cubit.formKey.currentState!.validate() &&
-                imageCubit.imageUrl.isNotEmpty &&
+                imageCubit.imageUrl != null &&
                 cubit.checkConfirmPassword()) {
-              cubit.add(AuthEvent.signUp(imageUrl: imageCubit.imageUrl));
-            } else if (imageCubit.imageUrl.isEmpty) {
+              cubit.add(AuthEvent.signUp(imageUrl: imageCubit.imageUrl!));
+            } else if (imageCubit.imageUrl == null) {
               ShowToast.showToastError(
                 message: context.translate(LangKeys.selectImage),
               );

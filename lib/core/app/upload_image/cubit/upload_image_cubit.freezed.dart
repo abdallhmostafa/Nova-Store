@@ -20,6 +20,7 @@ mixin _$UploadImageState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() selectedImage,
     required TResult Function(UploadImageResponseModel response) success,
     required TResult Function(String url) remove,
     required TResult Function(ApiErrorModel error) error,
@@ -29,6 +30,7 @@ mixin _$UploadImageState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? selectedImage,
     TResult? Function(UploadImageResponseModel response)? success,
     TResult? Function(String url)? remove,
     TResult? Function(ApiErrorModel error)? error,
@@ -38,6 +40,7 @@ mixin _$UploadImageState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? selectedImage,
     TResult Function(UploadImageResponseModel response)? success,
     TResult Function(String url)? remove,
     TResult Function(ApiErrorModel error)? error,
@@ -48,6 +51,7 @@ mixin _$UploadImageState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(SelectedImage value) selectedImage,
     required TResult Function(Success value) success,
     required TResult Function(Remove value) remove,
     required TResult Function(Error value) error,
@@ -57,6 +61,7 @@ mixin _$UploadImageState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(SelectedImage value)? selectedImage,
     TResult? Function(Success value)? success,
     TResult? Function(Remove value)? remove,
     TResult? Function(Error value)? error,
@@ -66,6 +71,7 @@ mixin _$UploadImageState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(SelectedImage value)? selectedImage,
     TResult Function(Success value)? success,
     TResult Function(Remove value)? remove,
     TResult Function(Error value)? error,
@@ -138,6 +144,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() selectedImage,
     required TResult Function(UploadImageResponseModel response) success,
     required TResult Function(String url) remove,
     required TResult Function(ApiErrorModel error) error,
@@ -150,6 +157,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? selectedImage,
     TResult? Function(UploadImageResponseModel response)? success,
     TResult? Function(String url)? remove,
     TResult? Function(ApiErrorModel error)? error,
@@ -162,6 +170,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? selectedImage,
     TResult Function(UploadImageResponseModel response)? success,
     TResult Function(String url)? remove,
     TResult Function(ApiErrorModel error)? error,
@@ -178,6 +187,7 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(SelectedImage value) selectedImage,
     required TResult Function(Success value) success,
     required TResult Function(Remove value) remove,
     required TResult Function(Error value) error,
@@ -190,6 +200,7 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(SelectedImage value)? selectedImage,
     TResult? Function(Success value)? success,
     TResult? Function(Remove value)? remove,
     TResult? Function(Error value)? error,
@@ -202,6 +213,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(SelectedImage value)? selectedImage,
     TResult Function(Success value)? success,
     TResult Function(Remove value)? remove,
     TResult Function(Error value)? error,
@@ -261,6 +273,7 @@ class _$LoadingImpl implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() selectedImage,
     required TResult Function(UploadImageResponseModel response) success,
     required TResult Function(String url) remove,
     required TResult Function(ApiErrorModel error) error,
@@ -273,6 +286,7 @@ class _$LoadingImpl implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? selectedImage,
     TResult? Function(UploadImageResponseModel response)? success,
     TResult? Function(String url)? remove,
     TResult? Function(ApiErrorModel error)? error,
@@ -285,6 +299,7 @@ class _$LoadingImpl implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? selectedImage,
     TResult Function(UploadImageResponseModel response)? success,
     TResult Function(String url)? remove,
     TResult Function(ApiErrorModel error)? error,
@@ -301,6 +316,7 @@ class _$LoadingImpl implements Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(SelectedImage value) selectedImage,
     required TResult Function(Success value) success,
     required TResult Function(Remove value) remove,
     required TResult Function(Error value) error,
@@ -313,6 +329,7 @@ class _$LoadingImpl implements Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(SelectedImage value)? selectedImage,
     TResult? Function(Success value)? success,
     TResult? Function(Remove value)? remove,
     TResult? Function(Error value)? error,
@@ -325,6 +342,7 @@ class _$LoadingImpl implements Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(SelectedImage value)? selectedImage,
     TResult Function(Success value)? success,
     TResult Function(Remove value)? remove,
     TResult Function(Error value)? error,
@@ -339,6 +357,135 @@ class _$LoadingImpl implements Loading {
 
 abstract class Loading implements UploadImageState {
   const factory Loading() = _$LoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$SelectedImageImplCopyWith<$Res> {
+  factory _$$SelectedImageImplCopyWith(
+          _$SelectedImageImpl value, $Res Function(_$SelectedImageImpl) then) =
+      __$$SelectedImageImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SelectedImageImplCopyWithImpl<$Res>
+    extends _$UploadImageStateCopyWithImpl<$Res, _$SelectedImageImpl>
+    implements _$$SelectedImageImplCopyWith<$Res> {
+  __$$SelectedImageImplCopyWithImpl(
+      _$SelectedImageImpl _value, $Res Function(_$SelectedImageImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UploadImageState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$SelectedImageImpl implements SelectedImage {
+  const _$SelectedImageImpl();
+
+  @override
+  String toString() {
+    return 'UploadImageState.selectedImage()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SelectedImageImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() selectedImage,
+    required TResult Function(UploadImageResponseModel response) success,
+    required TResult Function(String url) remove,
+    required TResult Function(ApiErrorModel error) error,
+  }) {
+    return selectedImage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? selectedImage,
+    TResult? Function(UploadImageResponseModel response)? success,
+    TResult? Function(String url)? remove,
+    TResult? Function(ApiErrorModel error)? error,
+  }) {
+    return selectedImage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? selectedImage,
+    TResult Function(UploadImageResponseModel response)? success,
+    TResult Function(String url)? remove,
+    TResult Function(ApiErrorModel error)? error,
+    required TResult orElse(),
+  }) {
+    if (selectedImage != null) {
+      return selectedImage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(SelectedImage value) selectedImage,
+    required TResult Function(Success value) success,
+    required TResult Function(Remove value) remove,
+    required TResult Function(Error value) error,
+  }) {
+    return selectedImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(SelectedImage value)? selectedImage,
+    TResult? Function(Success value)? success,
+    TResult? Function(Remove value)? remove,
+    TResult? Function(Error value)? error,
+  }) {
+    return selectedImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(SelectedImage value)? selectedImage,
+    TResult Function(Success value)? success,
+    TResult Function(Remove value)? remove,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (selectedImage != null) {
+      return selectedImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SelectedImage implements UploadImageState {
+  const factory SelectedImage() = _$SelectedImageImpl;
 }
 
 /// @nodoc
@@ -412,6 +559,7 @@ class _$SuccessImpl implements Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() selectedImage,
     required TResult Function(UploadImageResponseModel response) success,
     required TResult Function(String url) remove,
     required TResult Function(ApiErrorModel error) error,
@@ -424,6 +572,7 @@ class _$SuccessImpl implements Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? selectedImage,
     TResult? Function(UploadImageResponseModel response)? success,
     TResult? Function(String url)? remove,
     TResult? Function(ApiErrorModel error)? error,
@@ -436,6 +585,7 @@ class _$SuccessImpl implements Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? selectedImage,
     TResult Function(UploadImageResponseModel response)? success,
     TResult Function(String url)? remove,
     TResult Function(ApiErrorModel error)? error,
@@ -452,6 +602,7 @@ class _$SuccessImpl implements Success {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(SelectedImage value) selectedImage,
     required TResult Function(Success value) success,
     required TResult Function(Remove value) remove,
     required TResult Function(Error value) error,
@@ -464,6 +615,7 @@ class _$SuccessImpl implements Success {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(SelectedImage value)? selectedImage,
     TResult? Function(Success value)? success,
     TResult? Function(Remove value)? remove,
     TResult? Function(Error value)? error,
@@ -476,6 +628,7 @@ class _$SuccessImpl implements Success {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(SelectedImage value)? selectedImage,
     TResult Function(Success value)? success,
     TResult Function(Remove value)? remove,
     TResult Function(Error value)? error,
@@ -571,6 +724,7 @@ class _$RemoveImpl implements Remove {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() selectedImage,
     required TResult Function(UploadImageResponseModel response) success,
     required TResult Function(String url) remove,
     required TResult Function(ApiErrorModel error) error,
@@ -583,6 +737,7 @@ class _$RemoveImpl implements Remove {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? selectedImage,
     TResult? Function(UploadImageResponseModel response)? success,
     TResult? Function(String url)? remove,
     TResult? Function(ApiErrorModel error)? error,
@@ -595,6 +750,7 @@ class _$RemoveImpl implements Remove {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? selectedImage,
     TResult Function(UploadImageResponseModel response)? success,
     TResult Function(String url)? remove,
     TResult Function(ApiErrorModel error)? error,
@@ -611,6 +767,7 @@ class _$RemoveImpl implements Remove {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(SelectedImage value) selectedImage,
     required TResult Function(Success value) success,
     required TResult Function(Remove value) remove,
     required TResult Function(Error value) error,
@@ -623,6 +780,7 @@ class _$RemoveImpl implements Remove {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(SelectedImage value)? selectedImage,
     TResult? Function(Success value)? success,
     TResult? Function(Remove value)? remove,
     TResult? Function(Error value)? error,
@@ -635,6 +793,7 @@ class _$RemoveImpl implements Remove {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(SelectedImage value)? selectedImage,
     TResult Function(Success value)? success,
     TResult Function(Remove value)? remove,
     TResult Function(Error value)? error,
@@ -729,6 +888,7 @@ class _$ErrorImpl implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() selectedImage,
     required TResult Function(UploadImageResponseModel response) success,
     required TResult Function(String url) remove,
     required TResult Function(ApiErrorModel error) error,
@@ -741,6 +901,7 @@ class _$ErrorImpl implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? selectedImage,
     TResult? Function(UploadImageResponseModel response)? success,
     TResult? Function(String url)? remove,
     TResult? Function(ApiErrorModel error)? error,
@@ -753,6 +914,7 @@ class _$ErrorImpl implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? selectedImage,
     TResult Function(UploadImageResponseModel response)? success,
     TResult Function(String url)? remove,
     TResult Function(ApiErrorModel error)? error,
@@ -769,6 +931,7 @@ class _$ErrorImpl implements Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(SelectedImage value) selectedImage,
     required TResult Function(Success value) success,
     required TResult Function(Remove value) remove,
     required TResult Function(Error value) error,
@@ -781,6 +944,7 @@ class _$ErrorImpl implements Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(SelectedImage value)? selectedImage,
     TResult? Function(Success value)? success,
     TResult? Function(Remove value)? remove,
     TResult? Function(Error value)? error,
@@ -793,6 +957,7 @@ class _$ErrorImpl implements Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(SelectedImage value)? selectedImage,
     TResult Function(Success value)? success,
     TResult Function(Remove value)? remove,
     TResult Function(Error value)? error,

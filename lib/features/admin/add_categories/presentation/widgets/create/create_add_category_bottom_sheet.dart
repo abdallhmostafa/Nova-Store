@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nova_store/core/app/upload_image/cubit/upload_image_cubit.dart';
 import 'package:nova_store/core/common/widgets/custom_button.dart';
 import 'package:nova_store/core/common/widgets/custom_text_field.dart';
 import 'package:nova_store/core/common/widgets/text_app.dart';
@@ -7,7 +9,9 @@ import 'package:nova_store/core/extensions/context_extention.dart';
 import 'package:nova_store/core/lang/lang_keys.dart';
 import 'package:nova_store/core/styles/colors/app_colors_dark.dart';
 import 'package:nova_store/core/themes/app_text_style.dart';
+import 'package:nova_store/features/admin/add_categories/presentation/bloc/admin_create_category_bloc/admin_create_category_bloc.dart';
 import 'package:nova_store/features/admin/add_categories/presentation/widgets/category_upload_image.dart';
+import 'package:nova_store/features/admin/add_categories/presentation/widgets/create_category_bloc_listener.dart';
 
 class CreateAddCategoryBottomSheet extends StatefulWidget {
   const CreateAddCategoryBottomSheet({
@@ -83,7 +87,21 @@ class _CreateAddCategoryBottomSheetState
             SizedBox(
               width: double.infinity,
               child: CustomButton(
-                onPressed: () {},
+                onPressed: () async {
+                  FocusScope.of(context).requestFocus(FocusNode());
+
+                  if (formKey.currentState!.validate() &&
+                      (context.read<UploadImageCubit>().slectedImage != null &&
+                          context.read<UploadImageCubit>().slectedImage?.path !=
+                              '')) {
+                    context.read<AdminCreateCategoryBloc>().add(
+                          AdminCreateCategoryEvent.createCategory(
+                            name: controller.text,
+                            context: context,
+                          ),
+                        );
+                  }
+                },
                 backgroundColor: Colors.white,
                 lastRadius: 20,
                 textColor: AppColorsDark.blueDark,
@@ -93,6 +111,7 @@ class _CreateAddCategoryBottomSheetState
                     : context.translate(LangKeys.createNewCategory),
               ),
             ),
+            const CreateCategoryBlocListener(),
           ],
         ),
       ),

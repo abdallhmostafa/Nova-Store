@@ -16,8 +16,19 @@ class UploadImageCubit extends Cubit<UploadImageState> {
       : super(const UploadImageState.initial());
   final UploadImageRepo _uploadImageRepo;
 
-  String imageUrl = '';
+  String? imageUrl ;
+  XFile? slectedImage;
   Future<XFile?> pickImage() async => AppImagePick.pickImage();
+  Future<void> selectImage() async {
+    slectedImage = await pickImage();
+    if (slectedImage != null) {
+      emit(const UploadImageState.selectedImage());
+    } else {
+      emit(UploadImageState.error(
+          error: ApiErrorModel(message: 'No Image Selected'),),);
+    }
+  }
+
   Future<void> uploadImage() async {
     final xFile = await pickImage();
     if (xFile == null) {
@@ -42,7 +53,27 @@ class UploadImageCubit extends Cubit<UploadImageState> {
     );
   }
 
-  Future<void> removeImage() async {
-    emit(UploadImageState.remove(url: imageUrl));
+  Future<void> uploadSelectedImage({required XFile xFile}) async {
+    emit(const UploadImageState.loading());
+    final result = await _uploadImageRepo.uploadImage(file: xFile);
+    result.whenOrNull(
+      success: (response) {
+        imageUrl = response.location!;
+        // log('ImageUrl: $imageUrl');
+        emit(UploadImageState.success(response: response));
+      },
+      failure: (error) {
+        emit(UploadImageState.error(error: error));
+      },
+    );
+  }
+
+  void removeImage()  {
+    emit(UploadImageState.remove(url: imageUrl??''));
+  }
+
+  void removeSelectedImage()  {
+    slectedImage = null;
+    emit(const UploadImageState.remove(url: ''));
   }
 }
